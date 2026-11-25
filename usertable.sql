@@ -13,6 +13,3 @@ Create SEQUENCE user_seq
 
 -- USERS Indexes
 CREATE INDEX idx_user_genre ON users (genre);
-
--- Users Synonym
-CREATE SYNONYM users FOR awe_users;

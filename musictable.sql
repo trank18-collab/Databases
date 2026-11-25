@@ -1,12 +1,17 @@
 -- SQL script for creating a music table
 CREATE TABLE Music (
     song_id INT PRIMARY KEY,
-    song_title VARCHAR(50),
-    artist_name VARCHAR(50),
+    song_title VARCHAR2(100) NOT NULL,
+    artist_name VARCHAR2(100),
     song_min INT,
     release_date DATE,
-    user_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+    genre VARCHAR2(50) NOT NULL,
+    user_id INT NOT NULL,
+    mood_id INT NOT NULL,
+    movie_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (mood_id) REFERENCES mood(mood_id),
+    FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
 );
 
 -- Creating Sequence for auto-incrementing ID
@@ -23,8 +28,5 @@ CREATE INDEX idx_music_genre    ON music (genre);
 CREATE INDEX idx_music_mood_id  ON music (mood_id);
 CREATE INDEX idx_music_movie_id ON music (movie_id);
 CREATE INDEX idx_music_user_id  ON music (user_id);
-
--- Music Synonym
-CREATE SYNONYM music FOR awe_music;
 
 -- SQL script for inserting sample data into the music table
