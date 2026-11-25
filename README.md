@@ -9,24 +9,12 @@ Run these scripts once, in this order, in the same Oracle schema:
 3. `movietable.sql`
 4. `musictable.sql`
 5. `insertions.sql`
-6. `playlist`
+6. `playlisttable.sql`
+7. `playlistsongtable.sql`
 
-Then run this PL/SQL block to create and display a playlist for Interstellar's
-`Soundtrack` songs:
+Then run `playlist.sql` in SQL*Plus. It will prompt for the playlist name,
+movie ID, and music genre. For example, use:
 
-```sql
-SET SERVEROUTPUT ON
-
-DECLARE
-    v_playlist_id NUMBER;
-BEGIN
-    generate_playlist(
-        101,
-        'Soundtrack',
-        'Interstellar soundtrack',
-        v_playlist_id
-    );
-    display_playlist(v_playlist_id);
-END;
-/
-```
+- Playlist name: `Interstellar soundtrack`
+- Movie ID: `101`
+- Music genre: `Soundtrack`
