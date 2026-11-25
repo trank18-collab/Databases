@@ -24,5 +24,7 @@ CREATE INDEX idx_music_mood_id  ON music (mood_id);
 CREATE INDEX idx_music_movie_id ON music (movie_id);
 CREATE INDEX idx_music_user_id  ON music (user_id);
 
+-- Music Synonym
+CREATE SYNONYM music FOR awe_music;
 
 -- SQL script for inserting sample data into the music table

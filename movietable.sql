@@ -21,3 +21,6 @@ CREATE INDEX idx_movie_title   ON movie (movie_title);
 CREATE INDEX idx_movie_genre   ON movie (genre);
 CREATE INDEX idx_movie_mood_id ON movie (mood_id);
 CREATE INDEX idx_movie_user_id ON movie (user_id);
+
+-- Movie Synonym
+CREATE SYNONYM movie FOR awe_movie;
